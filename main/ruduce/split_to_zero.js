@@ -1,7 +1,13 @@
 'use strict';
 
-function spilt_to_zero(number, interval) {
-  //在这里写入代码
-}
+function split_to_zero(number, interval) {
+  let result = [number];
 
-module.exports = spilt_to_zero;
+  while (number > 0) {
+    number = Math.round((number - interval) * 100) / 100;
+    result.push(number);
+
+  }
+  return result;
+}
+module.exports = split_to_zero;
