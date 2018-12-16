@@ -6,9 +6,9 @@ var even_asc_odd_desc = function(collection) {
   let odd = collection.filter((element) => {
     return element % 2 === 1;
   });
-  return rankDesc(even).concat(rankAsc(odd));
+  return rankAsc(even).concat(rankDesc(odd));
 
-  function rankDesc(collection) {
+  function rankAsc(collection) {
     for (let i = collection.length; i >= 0; i--) {
       for (let j = 0; j < i; j++) {
         if (collection[j] > collection[j + 1]) {
@@ -21,7 +21,7 @@ var even_asc_odd_desc = function(collection) {
     return collection;
   }
 
-  function rankAsc(collection) {
+  function rankDesc(collection) {
     for (let i = collection.length; i >= 0; i--) {
       for (let j = 0; j < i; j++) {
         if (collection[j] < collection[j + 1]) {
