@@ -7,20 +7,18 @@ function create_updated_collection(collection_a, object_b) {
       count[item] += 1;
     }
   }
-  let collection_c = [];
+  let collectionC = [];
   for (let attr in count) {
     let temp = {
       key: attr,
       count: count[attr]
     };
-    collection_c.push(temp);
+    collectionC.push(temp);
   }
   let compareArray = object_b.value;
-  let newCollectionC = collection_c.map((element) => {
-    return element;
-  });
+
   for (let item of compareArray) {
-    for (let element of newCollectionC) {
+    for (let element of collectionC) {
       if (element.key === item) {
         let count = element.count;
         if (count >= 3) {
@@ -29,6 +27,6 @@ function create_updated_collection(collection_a, object_b) {
       }
     }
   }
-  return newCollectionC;
+  return collectionC;
 }
 module.exports = create_updated_collection;
