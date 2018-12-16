@@ -1,8 +1,11 @@
 'use strict';
 
 function amount_even(collection) {
-
-  //在这里写入代码
+  let even = collection.filter((element) => {
+    return element % 2 === 0;
+  });
+  return even.reduce((accumulator, currenValue) => {
+    return accumulator + currenValue;
+  });
 }
-
 module.exports = amount_even;
