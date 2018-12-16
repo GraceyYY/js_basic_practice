@@ -1,11 +1,8 @@
 'use strict';
 var even_group_calculate_average = function(collection) {
-  let selected = [];
-  for (let i = 0; i < collection.length; i++) {
-    if (i % 2 === 1) {
-      selected.push(collection[i]);
-    }
-  }
+  let selected = collection.filter((element, index) => {
+    return index % 2 === 1;
+  })
   let even = selected.filter((element) => {
     return element % 2 === 0;
   });

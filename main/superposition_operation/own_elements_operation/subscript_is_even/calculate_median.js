@@ -8,12 +8,9 @@ var calculate_median = function(collection) {
       return Math.ceil((collection[index] + collection[index - 1]) / 2);
     }
   }
-  let even = [];
-  for(let i = 0; i < collection.length; i++) {
-    if(i % 2 === 1) {
-      even.push(collection[i]);
-    }
-  }
+  let even = collection.filter((element, index) => {
+    return index % 2 === 1;
+  });
   return getMedian(even);
 };
 module.exports = calculate_median;
