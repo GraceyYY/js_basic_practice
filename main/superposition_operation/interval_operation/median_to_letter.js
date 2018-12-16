@@ -16,7 +16,7 @@ function median_to_letter(collection) {
   function getMedian(collection) {
     let index = Math.floor(collection.length / 2);;
     if (collection.length % 2 === 1) {
-      return collection(index);
+      return collection[index];
     } else {
       return Math.ceil((collection[index] + collection[index - 1]) / 2);
     }
